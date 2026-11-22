@@ -8,7 +8,7 @@ Local review based on official documentation consulted on November 22, 2026. Thi
 - The manifest includes domain, version, documentation, issue tracker, proposed owner and the `climate.thermostats_heating` category.
 - `.github/workflows/validate.yml` runs hassfest and HACS without ignored checks. The initial run failed because the manifest keys were unsorted (corrected locally) and HACS validation does not support private repositories. Consult current workflow runs for the latest results. A passing run must not be claimed until verified.
 - Public catalog inclusion still requires a public, non-archived repository with a description, topics, issues enabled, passing checks and a full GitHub release. A local ZIP is not a GitHub release. Catalog submission has not been requested.
-- Verify the rights and attribution for third-party code and assets before distribution. MCZ's [legal notice](https://www.mcz.it/en/legal-disclamer) restricts use of its website logos on other websites without written permission; the integration currently uses its own generic icon.
+- Verify the rights and attribution for third-party code and assets before distribution. MCZ's [legal notice](https://www.mcz.it/en/legal-disclamer) restricts use of its website logos on other websites without written permission; the integration includes MCZ brand images; verify permission before public distribution.
 - Validate compatibility with the Maestro MCZ version to be recommended: this integration relies on internal structures and methods that can change. Maestro MCZ 1.7.0's coordinator structure was inspected, but full functional compatibility and physical recipe writes remain unverified.
 
 ## Core Bronze criteria

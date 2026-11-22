@@ -1,6 +1,6 @@
 # Maestro MCZ Plus
 
-<img src="custom_components/maestro_mcz_plus/brand/icon.png" alt="Maestro MCZ Plus" width="128">
+<img src="custom_components/maestro_mcz_plus/brand/logo.png" alt="MCZ" width="192">
 
 [![Open in Home Assistant Marketplace](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=olerida&repository=maestro_mcz_plus&category=integration)
 [![Add integration to Home Assistant](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=maestro_mcz_plus)
@@ -68,4 +68,4 @@ To build the installation ZIP and macOS preview, set up the Python test environm
 
 [Maestro+ 5.8.0 mechanics](MECHANICS.md) documents the recipe limits, command format and telemetry found in the app. Compatibility with other stoves depends on the data and metadata available from Maestro MCZ.
 
-The code is distributed under the [MIT license](LICENSE). MCZ and its logos are trademarks of MCZ Group; this repository does not claim ownership of them.
+The code is distributed under the [MIT license](LICENSE). MCZ and its logos belong to their respective owner and are not covered by the MIT license.
