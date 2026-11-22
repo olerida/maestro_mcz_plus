@@ -1,32 +1,32 @@
-# Revisión para Marketplace y criterios Bronce
+# Marketplace and Bronze criteria review
 
-Revisión local basada en la documentación oficial consultada el 22 de noviembre de 2026. Esta integración personalizada no tiene una clasificación Bronce oficial; las reglas de calidad corresponden a Home Assistant Core. No se ha publicado ni enviado ninguna solicitud.
+Local review based on official documentation consulted on November 22, 2026. This custom integration does not have an official Bronze classification; the quality scale applies to Home Assistant Core. No catalog submission has been made.
 
 ## Marketplace
 
-- Estructura: `app/` debe ser la raíz del futuro repositorio, con una única integración en `custom_components/maestro_mcz_plus`, `hacs.json`, README e icono local.
-- Manifest: incluye dominio, versión, documentación, incidencias y responsable propuestos; estas URL y el responsable solo son verificables cuando exista el repositorio correspondiente. La categoría es `climate.thermostats_heating`.
-- Preparado el flujo `.github/workflows/validate.yml` para ejecutar hassfest y HACS sin omitir comprobaciones. No se ha ejecutado en GitHub: su éxito está pendiente, y no debe afirmarse hasta comprobarlo.
-- Para el catálogo público aún faltan un repositorio público no archivado, descripción, temas, incidencias habilitadas, ambas validaciones aprobadas y una versión completa publicada en GitHub. El ZIP local no es una release de GitHub. La inclusión en el catálogo requiere una solicitud posterior que no se ha realizado.
-- Verificar derechos y atribuciones de todo código o material de terceros y el uso de la marca antes de distribuir. El README indica que reúne trabajo de otras integraciones, pero no identifica aquí sus licencias de origen.
-- Comprobar en una instalación real la compatibilidad con la versión de Maestro MCZ que se vaya a recomendar; se usan estructuras y métodos internos de esa integración, que pueden cambiar. En el Home Assistant accesible se ha identificado Maestro MCZ 1.7.0 y una estructura de coordinador compatible en principio; no se ha hecho una prueba funcional completa. Las escrituras en una estufa física siguen sin verificar.
+- The repository contains one integration under `custom_components/maestro_mcz_plus`, a `hacs.json`, README, and local icon.
+- The manifest includes domain, version, documentation, issue tracker, proposed owner and the `climate.thermostats_heating` category.
+- `.github/workflows/validate.yml` runs hassfest and HACS without ignored checks. The initial run failed because the manifest keys were unsorted (corrected locally) and HACS validation does not support private repositories. Consult current workflow runs for the latest results. A passing run must not be claimed until verified.
+- Public catalog inclusion still requires a public, non-archived repository with a description, topics, issues enabled, passing checks and a full GitHub release. A local ZIP is not a GitHub release. Catalog submission has not been requested.
+- Verify the rights and attribution for third-party code and assets before distribution. MCZ's [legal notice](https://www.mcz.it/en/legal-disclamer) restricts use of its website logos on other websites without written permission; the integration currently uses its own generic icon.
+- Validate compatibility with the Maestro MCZ version to be recommended: this integration relies on internal structures and methods that can change. Maestro MCZ 1.7.0's coordinator structure was inspected, but full functional compatibility and physical recipe writes remain unverified.
 
-## Criterios Bronce de Core
+## Core Bronze criteria
 
-| Regla | Evaluación local |
+| Rule | Local assessment |
 | --- | --- |
-| action-setup, docs-actions, docs-conditions, docs-triggers | No aplican: no se registran acciones, condiciones ni disparadores propios. |
-| appropriate-polling | Reutiliza el coordinador de Maestro MCZ; no añade sondeo periódico propio. El intervalo efectivo depende de la integración de origen. |
-| brands | Icono local para Marketplace. La regla de Core exige icono y logotipo en el repositorio de marcas; pendiente y fuera del alcance de esta revisión. |
-| common-modules | Entidad común en `entity.py`; utiliza coordinadores del origen y no define uno propio. |
-| config-flow | Configuración por interfaz y opciones; selección de cuenta existente y advertencia de controles. |
-| config-flow-test-coverage | Las pruebas locales ejecutadas cubren el 100 % de líneas de `config_flow.py`; no equivale por sí solo a probar todos los escenarios posibles. |
-| dependency-transparency | Depende de otra integración personalizada, no de un paquete declarado directamente. Falta evaluar si esta arquitectura y sus dependencias serían aceptables para Core. |
-| docs-high-level-description, docs-installation-instructions, docs-removal-instructions | Cubiertas en README para instalación manual, requisitos, configuración y retirada. La instalación mediante enlace dependerá de un repositorio real. |
-| entity-event-setup | Las entidades usan `CoordinatorEntity`; el descubrimiento registra el listener en la configuración y lo elimina al descargar la entrada. Revisión de Core pendiente para confirmar la excepción por listener de plataforma. |
-| entity-unique-id, has-entity-name | Los identificadores derivan del código de estufa y la clave; las entidades usan `has_entity_name`. La estabilidad depende del identificador de origen. |
-| runtime-data | Datos de ejecución en `ConfigEntry.runtime_data`. |
-| test-before-configure, test-before-setup | Se comprueba la disponibilidad del coordinador de origen; no se realiza una conexión independiente. Pendiente validar que esta comprobación sea suficiente para Core. |
-| unique-config-entry | El identificador único es la entrada de origen y se impiden duplicados. |
+| action-setup, docs-actions, docs-conditions, docs-triggers | Not applicable: no integration-specific actions, conditions or triggers are registered. |
+| appropriate-polling | Reuses Maestro MCZ's coordinator and adds no periodic polling. The effective interval depends on the source. |
+| brands | A local icon is provided for Marketplace. Core requires an icon and logo in its brands repository; this remains outstanding. |
+| common-modules | The shared entity is in `entity.py`; source coordinators are reused rather than defining another. |
+| config-flow | UI setup selects an existing account and offers an advanced controls warning. |
+| config-flow-test-coverage | Local tests covered 100% of lines and branches in `config_flow.py`; this alone does not prove all scenarios are covered. |
+| dependency-transparency | Depends on another custom integration rather than a directly declared package. Acceptance of this architecture and its dependencies for Core remains to be assessed. |
+| docs-high-level-description, docs-installation-instructions, docs-removal-instructions | Covered in the README for manual installation, prerequisites, configuration and removal. Link-based installation requires a public repository. |
+| entity-event-setup | Entities use `CoordinatorEntity`; platform discovery subscribes during setup and unsubscribes on entry unload. Core review is needed to confirm the platform-listener exception. |
+| entity-unique-id, has-entity-name | IDs derive from the stove code and key, and entities use `has_entity_name`. ID stability depends on the source. |
+| runtime-data | Runtime state is stored in `ConfigEntry.runtime_data`. |
+| test-before-configure, test-before-setup | Source coordinator availability is checked; no independent connection is made. Whether this is sufficient for Core remains unverified. |
+| unique-config-entry | The source entry ID is the unique ID and duplicates are prevented. |
 
-Fuentes: [reglas de calidad](https://contributors.home-assistant.io/core/quality-scale/rules/), [integraciones personalizadas](https://contributors.home-assistant.io/marketplace/guides/integrations/), [catálogo](https://contributors.home-assistant.io/marketplace/guides/catalog/) y [validaciones](https://contributors.home-assistant.io/marketplace/reference/validation/).
+Sources: [quality rules](https://contributors.home-assistant.io/core/quality-scale/rules/), [custom integrations](https://contributors.home-assistant.io/marketplace/guides/integrations/), [catalog](https://contributors.home-assistant.io/marketplace/guides/catalog/) and [validation](https://contributors.home-assistant.io/marketplace/reference/validation/).

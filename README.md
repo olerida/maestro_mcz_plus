@@ -1,48 +1,71 @@
 # Maestro MCZ Plus
 
-Integración complementaria para Home Assistant que reúne los datos de funcionamiento y las recetas de tu estufa MCZ Maestro. Usa la cuenta y la conexión de [Maestro MCZ](https://github.com/Robbe-B/maestro_mcz).
+<img src="custom_components/maestro_mcz_plus/brand/icon.png" alt="Maestro MCZ Plus" width="128">
 
-## Instalación
+[![Open in Home Assistant Marketplace](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=olerida&repository=maestro_mcz_plus&category=integration)
+[![Add integration to Home Assistant](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=maestro_mcz_plus)
 
-1. Comprueba que **Maestro MCZ** ya detecta tu estufa en Home Assistant. Este paquete se ha probado con Home Assistant 2026.10.4 en un entorno aislado.
-2. Descomprime el ZIP de `dist/` y copia `custom_components/maestro_mcz_plus` en la carpeta `custom_components` de tu configuración de Home Assistant. Después reinicia Home Assistant.
-3. Abre **Ajustes → Dispositivos y servicios → Añadir integración → Maestro MCZ Plus** y selecciona tu cuenta Maestro MCZ.
+> [!WARNING]
+> Normal mode is read-only. Advanced options enable changes to stove combustion settings and are intended only for technicians or users with advanced knowledge. Commands have been tested in simulations; their effect on a physical stove has not yet been verified.
 
-Esta versión se entrega como paquete local. Cuando exista un repositorio público, podrás añadir su URL desde **Ajustes → Marketplace → Añadir desde enlace** en Home Assistant 2026.11 o posterior; en versiones anteriores compatibles, desde **HACS → Repositorios personalizados**. Selecciona la categoría **Integración**. [Requisitos de HACS](https://www.hacs.xyz/docs/publish/integration/).
+Maestro MCZ Plus is a community integration for Home Assistant that adds operating data and recipe settings for MCZ Maestro stoves. It uses an existing [Maestro MCZ](https://github.com/Robbe-B/maestro_mcz) account and connection. This project is independent and is not affiliated with or endorsed by MCZ Group.
 
-Si ya usas **Maestro MCZ Extra Sensors** o **Maestro MCZ Recipes**, esta integración se añade con entidades nuevas. Revisa las automatizaciones y los paneles que usan las entidades antiguas antes de desactivar esas integraciones.
+## Installation
 
-## Datos de funcionamiento
+### Prerequisites
 
-Según el modelo, podrás ver la temperatura de humos y de la placa, la fase de funcionamiento, la potencia activa, las RPM del extractor y del sinfín, y los tiempos de limpieza del brasero. Las entidades aparecen cuando la integración de origen recibe esos datos. La frecuencia depende del intervalo de Maestro MCZ y puede diferir de la app.
+1. Install and configure **Maestro MCZ** and check that it detects your stove. This package has been tested in an isolated Home Assistant 2026.10.4 environment.
+2. Ensure the stove is connected and Maestro MCZ can reach the MCZ cloud.
 
-## Recetas
+### Home Assistant Marketplace
 
-Los valores de **Activo**, **Pellet** y **Modo de adaptación** aparecen cuando la estufa los proporciona. La lectura funciona desde el primer inicio. Para habilitar cambios de combustión, un técnico puede activar los controles de receta en **Ajustes → Dispositivos y servicios → Maestro MCZ Plus → Configurar**. Los controles se ofrecen únicamente para combinaciones de modelo y parámetros reconocidas. Los ajustes numéricos avanzan de uno en uno dentro de los límites que proporciona el modelo.
+The repository is currently private; the Marketplace button and public installation link will be usable once the repository is made public. No catalog listing is implied.
 
-Las órdenes se han probado con simulaciones. Verifica en la app o en la estufa cualquier cambio real. La integración comunica un error si el origen no devuelve los valores solicitados después de la orden. Al cambiar un ajuste de Activo, conserva el otro valor que proporcionó la última consulta. Evita cambiar Activo desde dos clientes a la vez.
+1. In Home Assistant 2026.11 or later, open **Settings → Marketplace**, select **Add from link**, and enter `https://github.com/olerida/maestro_mcz_plus`. Select **Integration** if asked. The Marketplace button above opens the same flow.
+2. Open **Maestro MCZ Plus**, select **Install**, and follow any restart prompt.
+3. Select the **Add integration** button above, or go to **Settings → Devices & services → Add integration** and search for **Maestro MCZ Plus**. Select the account already configured in Maestro MCZ.
 
-Si recargas o actualizas Maestro MCZ, recarga también Maestro MCZ Plus para volver a conectar los sensores al origen.
+On earlier compatible versions, add the repository as a custom repository in HACS under the **Integration** category and follow the installation and restart prompts.
 
-## Vista previa en macOS
+### Manual installation
 
-Craft Anything puede abrir `dist/Maestro MCZ Plus Preview.app` para mostrar las lecturas y recetas de una estufa simulada. La conexión con tu estufa se realiza desde Home Assistant mediante la integración descrita arriba.
+1. Copy `custom_components/maestro_mcz_plus` from the repository or installation ZIP into your Home Assistant configuration's `custom_components` directory. Create that directory if necessary.
+2. Restart Home Assistant.
+3. Go to **Settings → Devices & services → Add integration**, select **Maestro MCZ Plus**, and choose your existing Maestro MCZ account.
 
-Para generar el ZIP de instalación y compilar la vista previa en macOS, usa el entorno de pruebas de Python indicado en `requirements-test.txt` y ejecuta `./build.sh` con las herramientas de línea de comandos de Xcode instaladas.
+If you already use **Maestro MCZ Extra Sensors** or **Maestro MCZ Recipes**, this integration creates new entities. Review automations and dashboards that use the old entities before disabling those integrations.
 
-## Código y licencia
+## Operating data
 
-Esta integración reúne el trabajo de `maestro_rtinfo` y `maestro_recipes`. [Mecánica de Maestro+ 5.8.0](MECHANICS.md) documenta los límites de receta, el formato de las órdenes y los datos de telemetría encontrados en la aplicación. La compatibilidad de otras estufas depende de los datos y metadatos disponibles en Maestro MCZ.
+Depending on the stove model, entities can include exhaust and board temperatures, operating phase, active power, exhaust fan and auger speeds, and brazier cleaning times. Entities appear as the source integration receives the data. Updates follow Maestro MCZ's interval and may differ from the official app.
 
-[Licencia MIT](LICENSE).
+## Recipes
 
-## Desinstalación
+Active, Pellet and Adaptive mode values appear when provided by the stove. Reading them is enabled by default. A technician can enable recipe controls under **Settings → Devices & services → Maestro MCZ Plus → Configure**. Controls are offered only for recognized model and parameter combinations. Numeric values change in steps of one within the limits provided by the model.
 
-En **Ajustes → Dispositivos y servicios**, abre el menú de Maestro MCZ Plus y selecciona **Eliminar**. Si la instalaste manualmente, elimina además la carpeta `custom_components/maestro_mcz_plus` y reinicia Home Assistant. Si la instalaste con Marketplace o HACS, desinstálala desde allí y sigue la indicación de reinicio. La integración Maestro MCZ y sus dispositivos se conservan.
+Commands have been tested with simulations only. Verify real changes in the official app or on the stove. The integration reports an error if the source does not return the requested values after a command. When changing one Active setting, the other is preserved from the latest reading; avoid changing Active settings from two clients at the same time.
 
-## Resolución de problemas
+After reloading or updating Maestro MCZ, reload Maestro MCZ Plus as well to reconnect its entities to the source.
 
-- **No aparece ninguna cuenta:** configura primero Maestro MCZ y comprueba que su cuenta esté cargada y que detecte al menos una estufa.
-- **Faltan datos o controles:** dependen de los valores y metadatos que proporcionan la estufa y la integración de origen. Los controles requieren activar la opción avanzada y una conexión reconocida.
-- **Datos no disponibles después de recargar Maestro MCZ:** recarga Maestro MCZ Plus desde su menú en Dispositivos y servicios.
-- **Un cambio no se confirma:** comprueba el estado en la app oficial o en la estufa antes de volver a intentarlo. Las órdenes solo se han validado mediante simulación.
+## Troubleshooting
+
+- **No account available:** configure Maestro MCZ first and ensure the account is loaded and detects at least one stove.
+- **Missing readings or controls:** availability depends on data and metadata provided by the stove and the source integration. Controls require the advanced option and recognized settings.
+- **Data unavailable after reloading Maestro MCZ:** reload Maestro MCZ Plus from its menu under Devices & services.
+- **A change is not confirmed:** check the official app or stove before trying again. Commands have only been validated in simulations.
+
+## Removal
+
+Under **Settings → Devices & services**, open the Maestro MCZ Plus menu and select **Delete**. For a manual installation, also remove `custom_components/maestro_mcz_plus` and restart Home Assistant. If installed with Marketplace or HACS, uninstall it there and follow the restart prompt. Maestro MCZ and its devices are retained.
+
+## macOS preview and build
+
+Craft Anything can open `dist/Maestro MCZ Plus Preview.app` to display simulated stove readings and recipes. The real stove connection is made through Home Assistant.
+
+To build the installation ZIP and macOS preview, set up the Python test environment in `requirements-test.txt`, install Xcode command line tools, and run `./build.sh`.
+
+## Code and license
+
+[Maestro+ 5.8.0 mechanics](MECHANICS.md) documents the recipe limits, command format and telemetry found in the app. Compatibility with other stoves depends on the data and metadata available from Maestro MCZ.
+
+The code is distributed under the [MIT license](LICENSE). MCZ and its logos are trademarks of MCZ Group; this repository does not claim ownership of them.
