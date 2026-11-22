@@ -15,5 +15,5 @@
   "integration_type": "hub",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/olerida/maestro_mcz_plus/issues",
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

@@ -1,4 +1,5 @@
 {
   "name": "Maestro MCZ Plus",
-  "homeassistant": "2026.10.4"
+  "homeassistant": "2026.10.4",
+  "hide_default_branch": true
 }

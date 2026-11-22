@@ -19,7 +19,7 @@ Maestro MCZ Plus is a community integration for Home Assistant that adds operati
 
 ### Home Assistant Marketplace
 
-This public repository can be added by link. It is not listed in the Marketplace catalog, and no GitHub release has been published. Availability and installation through Marketplace have not yet been verified end to end.
+This public repository can be added by link. It is not listed in the default Marketplace catalog. Availability and installation through Marketplace have not yet been verified end to end.
 
 1. In Home Assistant 2026.11 or later, open **Settings → Marketplace**, select **Add from link**, and enter `https://github.com/olerida/maestro_mcz_plus`. Select **Integration** if asked. The Marketplace button above opens the same flow.
 2. Open **Maestro MCZ Plus**, select **Install**, and follow any restart prompt.
