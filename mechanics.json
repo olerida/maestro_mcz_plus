@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "values": [
+    {
+      "name": "Paso de Activo",
+      "group": "Recetas",
+      "value": 1,
+      "source": "Maestro+ 5.8.0, libapp.so 0x94c4ec (MECHANICS.md)"
+    },
+    {
+      "name": "Paso de Pellet",
+      "group": "Recetas",
+      "value": 1,
+      "source": "Maestro+ 5.8.0, libapp.so 0x95cf3c (MECHANICS.md)"
+    },
+    {
+      "name": "Límites de Activo y Pellet",
+      "group": "Recetas",
+      "value": "Mínimo y máximo de la configuración del modelo, restringidos a valores enteros",
+      "source": "Maestro+ 5.8.0, libapp.so 0x94ca84 y 0x95cb60 (MECHANICS.md)"
+    },
+    {
+      "name": "Orden de envío de Activo",
+      "group": "Recetas",
+      "value": "Valor entero seguido del interruptor booleano",
+      "source": "Maestro+ 5.8.0, libapp.so 0x94cf34 (MECHANICS.md)"
+    },
+    {
+      "name": "Duración prevista de limpieza",
+      "group": "Telemetría",
+      "value": "t_dur_pul",
+      "unit": "s",
+      "source": "Maestro+ 5.8.0, libapp.so 0x9a96dc (MECHANICS.md)"
+    },
+    {
+      "name": "Tiempo restante hasta limpieza",
+      "group": "Telemetría",
+      "value": "t_int_pul",
+      "unit": "s",
+      "source": "Maestro+ 5.8.0, libapp.so 0x9a981c (MECHANICS.md)"
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "title": "Maestro MCZ Plus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Cuenta Maestro MCZ",
+        "description": "Selecciona la cuenta existente.",
+        "data": {
+          "source_entry_id": "Integración Maestro MCZ",
+          "advanced": "Opciones avanzadas: permitir controlar las recetas"
+        },
+        "data_description": {
+          "advanced": "Advertencia: el modo normal es de solo lectura. El modo avanzado puede modificar los parámetros de combustión de la estufa y está destinado únicamente a técnicos o personas con conocimientos avanzados."
+        }
+      }
+    },
+    "abort": {
+      "no_source": "No hay cuentas disponibles o ya están añadidas.",
+      "already_configured": "Esta cuenta ya está configurada."
+    },
+    "error": {
+      "source_unavailable": "La cuenta no está disponible o esta versión no es compatible."
+    }
+  },
+  "entity": {
+    "number": {
+      "pellet": {
+        "name": "Receta pellet"
+      },
+      "active_value": {
+        "name": "Receta Activo"
+      }
+    },
+    "switch": {
+      "adaptive": {
+        "name": "Modo de adaptación"
+      },
+      "active_enabled": {
+        "name": "Activo habilitado"
+      }
+    },
+    "sensor": {
+      "pos_ric_flu": {
+        "name": "Receta activo"
+      },
+      "pos_ric_pel": {
+        "name": "Receta pellet"
+      },
+      "mod_ada_on": {
+        "name": "Receta modo de adaptación"
+      },
+      "pul_brac": {
+        "name": "Matic"
+      },
+      "att_eco": {
+        "name": "Start/Stop"
+      },
+      "ingr_amb": {
+        "name": "T.EXT"
+      },
+      "sens_liv_pellet": {
+        "name": "Sensor de nivel de pellet"
+      },
+      "adaptive_on": {
+        "name": "Modo de adaptación activo"
+      },
+      "potenza_att": {
+        "name": "Potencia activa"
+      },
+      "potenza_counter": {
+        "name": "Duración de la potencia activa"
+      },
+      "t_dur_pul": {
+        "name": "Duración prevista de limpieza del brasero"
+      },
+      "set_pot_man": {
+        "name": "Nivel de potencia manual seleccionado"
+      },
+      "pressione": {
+        "name": "Activo real"
+      },
+      "pressione_imp": {
+        "name": "Activo establecido"
+      },
+      "t_int_pul": {
+        "name": "Tiempo restante hasta limpieza del brasero"
+      },
+      "state": {
+        "name": "Estado de la estufa"
+      },
+      "state_duration": {
+        "name": "Duración del estado"
+      },
+      "mode": {
+        "name": "Modo de funcionamiento"
+      },
+      "is_connected": {
+        "name": "Estufa conectada"
+      },
+      "is_in_error": {
+        "name": "Error de la estufa"
+      },
+      "last_alarm": {
+        "name": "Última alarma"
+      },
+      "crono_enabled": {
+        "name": "Programación horaria activada"
+      },
+      "silent_enabled": {
+        "name": "Modo silencioso activado"
+      },
+      "sleep_enabled": {
+        "name": "Modo descanso activado"
+      },
+      "clean_in_prog": {
+        "name": "Limpieza en curso"
+      },
+      "clean_air_in_prog": {
+        "name": "Limpieza del aire en curso"
+      },
+      "ore_prox_manut": {
+        "name": "Horas hasta el próximo mantenimiento"
+      },
+      "index_vel_v1": {
+        "name": "Nivel de ventilación 1"
+      },
+      "index_vel_v2": {
+        "name": "Nivel de ventilación 2"
+      },
+      "index_vel_v3": {
+        "name": "Nivel de ventilación 3"
+      },
+      "set_amb1": {
+        "name": "Temperatura ambiente objetivo 1"
+      },
+      "set_amb2": {
+        "name": "Temperatura ambiente objetivo 2"
+      },
+      "set_amb3": {
+        "name": "Temperatura ambiente objetivo 3"
+      },
+      "temp_fumi": {
+        "name": "Temperatura de humos"
+      },
+      "temp_scheda": {
+        "name": "Temperatura de la placa"
+      },
+      "vel_real_ventola_fumi": {
+        "name": "Velocidad real del extractor de humos"
+      },
+      "vel_imp_ventola_fumi": {
+        "name": "Velocidad solicitada del extractor de humos"
+      },
+      "vel_real_coclea": {
+        "name": "Velocidad real del sinfín"
+      },
+      "vel_imp_coclea": {
+        "name": "Velocidad solicitada del sinfín"
+      },
+      "temp_caldaia": {
+        "name": "Temperatura de la caldera"
+      },
+      "temp_bollitore": {
+        "name": "Temperatura del acumulador"
+      },
+      "temp_puffer": {
+        "name": "Temperatura del depósito de inercia"
+      }
+    },
+    "binary_sensor": {
+      "pos_ric_flu": {
+        "name": "Receta activo"
+      },
+      "pos_ric_pel": {
+        "name": "Receta pellet"
+      },
+      "mod_ada_on": {
+        "name": "Receta modo de adaptación"
+      },
+      "pul_brac": {
+        "name": "Matic"
+      },
+      "att_eco": {
+        "name": "Start/Stop"
+      },
+      "ingr_amb": {
+        "name": "T.EXT"
+      },
+      "sens_liv_pellet": {
+        "name": "Sensor de nivel de pellet"
+      },
+      "adaptive_on": {
+        "name": "Modo de adaptación activo"
+      },
+      "potenza_att": {
+        "name": "Potencia activa"
+      },
+      "potenza_counter": {
+        "name": "Duración de la potencia activa"
+      },
+      "t_dur_pul": {
+        "name": "Duración prevista de limpieza del brasero"
+      },
+      "set_pot_man": {
+        "name": "Nivel de potencia manual seleccionado"
+      },
+      "pressione": {
+        "name": "Activo real"
+      },
+      "pressione_imp": {
+        "name": "Activo establecido"
+      },
+      "t_int_pul": {
+        "name": "Tiempo restante hasta limpieza del brasero"
+      },
+      "state": {
+        "name": "Estado de la estufa"
+      },
+      "state_duration": {
+        "name": "Duración del estado"
+      },
+      "mode": {
+        "name": "Modo de funcionamiento"
+      },
+      "is_connected": {
+        "name": "Estufa conectada"
+      },
+      "is_in_error": {
+        "name": "Error de la estufa"
+      },
+      "last_alarm": {
+        "name": "Última alarma"
+      },
+      "crono_enabled": {
+        "name": "Programación horaria activada"
+      },
+      "silent_enabled": {
+        "name": "Modo silencioso activado"
+      },
+      "sleep_enabled": {
+        "name": "Modo descanso activado"
+      },
+      "clean_in_prog": {
+        "name": "Limpieza en curso"
+      },
+      "clean_air_in_prog": {
+        "name": "Limpieza del aire en curso"
+      },
+      "ore_prox_manut": {
+        "name": "Horas hasta el próximo mantenimiento"
+      },
+      "index_vel_v1": {
+        "name": "Nivel de ventilación 1"
+      },
+      "index_vel_v2": {
+        "name": "Nivel de ventilación 2"
+      },
+      "index_vel_v3": {
+        "name": "Nivel de ventilación 3"
+      },
+      "set_amb1": {
+        "name": "Temperatura ambiente objetivo 1"
+      },
+      "set_amb2": {
+        "name": "Temperatura ambiente objetivo 2"
+      },
+      "set_amb3": {
+        "name": "Temperatura ambiente objetivo 3"
+      },
+      "temp_fumi": {
+        "name": "Temperatura de humos"
+      },
+      "temp_scheda": {
+        "name": "Temperatura de la placa"
+      },
+      "vel_real_ventola_fumi": {
+        "name": "Velocidad real del extractor de humos"
+      },
+      "vel_imp_ventola_fumi": {
+        "name": "Velocidad solicitada del extractor de humos"
+      },
+      "vel_real_coclea": {
+        "name": "Velocidad real del sinfín"
+      },
+      "vel_imp_coclea": {
+        "name": "Velocidad solicitada del sinfín"
+      },
+      "temp_caldaia": {
+        "name": "Temperatura de la caldera"
+      },
+      "temp_bollitore": {
+        "name": "Temperatura del acumulador"
+      },
+      "temp_puffer": {
+        "name": "Temperatura del depósito de inercia"
+      },
+      "act": {
+        "name": "Receta Activo habilitada"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opciones avanzadas",
+        "description": "Activa los controles o usa solo lectura.",
+        "data": {
+          "advanced": "Permitir controlar las recetas"
+        },
+        "data_description": {
+          "advanced": "Advertencia: el modo normal es de solo lectura. El modo avanzado puede modificar los parámetros de combustión de la estufa y está destinado únicamente a técnicos o personas con conocimientos avanzados."
+        }
+      }
+    }
+  }
+}

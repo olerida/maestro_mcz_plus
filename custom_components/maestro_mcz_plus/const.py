@@ -1,0 +1,5 @@
+"""Constants."""
+DOMAIN = "maestro_mcz_plus"
+SOURCE_DOMAIN = "maestro_mcz"
+CONF_SOURCE_ENTRY_ID = "source_entry_id"
+CONF_ADVANCED = "advanced"

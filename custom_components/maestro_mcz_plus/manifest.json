@@ -1,0 +1,19 @@
+{
+  "domain": "maestro_mcz_plus",
+  "name": "Maestro MCZ Plus",
+  "codeowners": [
+    "@olerida"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "maestro_mcz"
+  ],
+  "documentation": "https://github.com/olerida/maestro_mcz_plus",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/olerida/maestro_mcz_plus/issues",
+  "version": "0.1.2",
+  "categories": [
+    "climate.thermostats_heating"
+  ]
+}
